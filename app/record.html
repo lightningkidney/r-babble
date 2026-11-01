@@ -1,0 +1,15 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Record a Bank · R-Babble</title><link rel="stylesheet" href="style.css">
+<style>li{display:flex;gap:8px;align-items:center;padding:4px 0;border-bottom:1px solid var(--line)}li b{width:3.2em}li canvas{flex:1;height:28px;min-width:0}ul{list-style:none;padding:0}.ok{color:var(--acc)}.warn{color:#c57a1c}</style></head>
+<body><main>
+<h1>Record a voicebank</h1>
+<p class="note"><a href="index.html">← back to the synth</a></p>
+<p>Say each short sound <b>on the same note</b>, clearly and briefly (about a tenth of a second — "ka", not "kaaaa"), 15–20 cm from the mic in a quiet room. Keep the vowels pure: a·i·u·e·o as in Japanese (ah, ee, oo, eh, oh). Pitch can be anything comfortable; the recorder flattens each unit to the same pitch.</p>
+<div class="grid">
+  <label>Bank name <input id="name" value="my-voice"></label>
+  <label>Unit set <select id="set"><option value="basic">Basic — 46 kana (about 5 min)</option><option value="full">Full — 80 kana (about 8 min)</option></select></label>
+</div>
+<div class="row"><button id="build" class="primary">Build &amp; save bank</button><span id="status"></span></div>
+<ul id="list"></ul>
+</main><script type="module" src="record.js"></script></body></html>

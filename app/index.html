@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>R-Babble</title><link rel="stylesheet" href="style.css"></head>
+<body><main>
+<h1>R-Babble</h1>
+<textarea id="text" rows="4" spellcheck="false">Hello! Welcome to my island!</textarea>
+<div id="reveal" aria-live="polite"></div>
+<div class="row">
+  <button id="play" class="primary">▶ Play</button><button id="stop">■ Stop</button><button id="export">Export WAV</button>
+  <span id="status"></span>
+</div>
+<div class="grid">
+  <label>Character <select id="char"></select></label>
+  <label>Voicebank <select id="bank"></select></label>
+  <label>Base pitch <output id="o-hz"></output><input id="hz" type="range" min="90" max="700" step="1"></label>
+  <label>Pitch variation <output id="o-var"></output><input id="var" type="range" min="0" max="2" step="0.05"></label>
+  <label>Speech speed <output id="o-tempo"></output><input id="tempo" type="range" min="0.5" max="2" step="0.05"></label>
+  <label>Seed <span class="inline"><input id="seed" type="number" placeholder="auto (from text)"><button id="dice" title="random seed">🎲</button></span></label>
+</div>
+<details open><summary>Presets</summary>
+  <div class="row"><input id="pname" placeholder="preset name"><button id="psave">Save</button>
+  <select id="plist"></select><button id="pload">Load</button><button id="pdel">Delete</button>
+  <button id="pexport">Export JSON</button><label class="file">Import JSON<input id="pimport" type="file" accept=".json" hidden></label></div>
+</details>
+<details><summary>Voicebanks</summary>
+  <p class="note">Drop banks into <code>banks_local/&lt;name&gt;/</code> (manifest.json + sprite.wav) or import them here. Make your own at <a href="record.html">Record a bank</a>.</p>
+  <label class="file">Import bank (manifest.json + sprite.wav)<input id="bimport" type="file" accept=".json,.wav" multiple hidden></label>
+</details>
+<p class="note">Voices are <b>AI-generated</b> (or your own recordings). Unofficial; not affiliated with Nintendo. See <code>THIRD_PARTY_NOTICES.md</code>. Only import voicebanks you have the right to use.</p>
+</main><script type="module" src="app.js"></script></body></html>
